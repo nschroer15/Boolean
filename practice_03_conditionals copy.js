@@ -18,6 +18,13 @@ function classifyNumber(num) {
   if (num === 0) {
     return "zero";
   }
+  if (num % 2 === 0 && num > 0) {
+    return "positive even";
+  } else if (num % 2 === 0 && num < 0) {
+    return "negative even";
+  } else if (num > 0) {
+    return "positive odd";
+  } else return "negative odd";
 }
 
 console.log(classifyNumber(0)); // "zero"
@@ -36,6 +43,12 @@ console.log(classifyNumber(-7)); // "negative odd"
 // If score is less than 0 or greater than 100, return "Invalid score".
 function getLetterGrade(score) {
   // TODO: your code here
+  if (score <= 100 && score >= 90) return "A";
+  else if (score <= 89 && score >= 80) return "B";
+  else if (score <= 79 && score >= 70) return "C";
+  else if (score <= 69 && score >= 60) return "D";
+  else if (score <= 60 && score >= 0) return "F";
+  else return "Invalid score";
 }
 
 console.log(getLetterGrade(95)); // "A"
@@ -52,6 +65,10 @@ console.log(getLetterGrade(150)); // "Invalid score"
 //   otherwise, num converted to a string
 function fizzBuzz(num) {
   // TODO: your code here
+  if (num % 3 === 0 && num % 5 === 0) return "FizzBuzz";
+  else if (num % 3 === 0) return "Fizz";
+  else if (num % 5 === 0) return "Buzz";
+  else return num;
 }
 
 console.log(fizzBuzz(3)); // "Fizz"
@@ -69,6 +86,10 @@ console.log(fizzBuzz(7)); // "7"
 //   weight > 5   -> 12
 function getShippingCost(weight, isMember) {
   // TODO: your code here (nested conditional — check isMember first, then weight)
+  if (isMember === true) {
+    if (weight <= 5) return "0";
+    else return "3";
+  }
 }
 
 console.log(getShippingCost(3, true)); // 0
