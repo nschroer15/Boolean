@@ -89,6 +89,10 @@ function getShippingCost(weight, isMember) {
   if (isMember === true) {
     if (weight <= 5) return "0";
     else return "3";
+  } else {
+    if (weight <= 1) return "5";
+    else if (weight <= 5) return "8";
+    else return "12";
   }
 }
 
@@ -103,6 +107,7 @@ console.log(getShippingCost(10, false)); // 12
 // instead of if / else.
 function isEvenTernary(num) {
   // TODO: your code here
+  return num % 2 === 0 ? "True" : "False";
 }
 
 console.log(isEvenTernary(4)); // true
